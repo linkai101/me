@@ -1,0 +1,23 @@
+
+.main {
+  padding: 24px;
+}
+
+.card {
+  height: 184px;
+  border: 2px solid #eaeaea;
+  border-radius: 12px;
+  padding: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardInner {
+  text-align: center;
+}
+
+.cardInner a {
+  margin: 4px;
+}
