@@ -1,13 +1,17 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { ThemeProvider } from "theme-ui";
 import MDXProvider from "../components/MDXProvider";
 import '../styles/globals.css';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Fixes icon size inheriting from another css class
 
-import theme from '../theme';
-
+import theme from '../lib/theme';
+import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -17,7 +21,15 @@ function MyApp({ Component, pageProps }) {
       
       <ThemeProvider theme={theme}>
         <MDXProvider>
-          <Component {...pageProps} />
+          <div style={{ minHeight: '100vh' }}>
+            {
+              router.pathname !== '/' 
+              && router.pathname !== '/404' 
+              ? <Nav/> : null
+            }
+            <Component {...pageProps}/>
+          </div>
+          <Footer/>
         </MDXProvider>
       </ThemeProvider>
     </>

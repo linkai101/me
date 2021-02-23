@@ -1,21 +1,20 @@
-import styles from '../styles/Home.module.css';
-
-import Footer from '../components/Footer';
-
+import React from 'react';
 import { Box, Grid, Button } from 'theme-ui';
+import styles from '../styles/Home.module.css';
+import { getLatestPost } from "../lib/posts";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
-export default function Home() {
+export default function Home({ latestPostData }) {
   return (
     <>
       <Box color="light" bg="dark" className={styles.headerContainer}>
         <header className={styles.header}>
           <span className={styles.title}>Linkai Wu</span>
           <nav className={styles.nav}>
-            <a href="https://iam.linkaiwu.com">About</a>
+            <a href="/about">About</a>
             <a href="/projects">Projects</a>
             <a href="/blog">Blog</a>
           </nav>
@@ -29,9 +28,6 @@ export default function Home() {
             <a href="https://www.instagram.com/linkaiwu_/" target="_blank" rel="noreferrer">
               <FontAwesomeIcon icon={faInstagram}/>
             </a>
-            <a href="https://www.tiktok.com/@linkaiwu_" target="_blank" rel="noreferrer">
-              <FontAwesomeIcon icon={faTiktok}/>
-            </a>
           </div>
         </header>
       </Box>
@@ -39,28 +35,41 @@ export default function Home() {
       <Box color="text" bg="background" className={styles.main}>
         <Grid gap={2} columns={[ 1, null, 2 ]} className={styles.row}>
           <Box className={styles.gridText}>
-            <h1>Hi, I am Linkai</h1>
-            <p>I am a sophomore at Montgomery Blair High School.</p>
-            <a href="https://iam.linkaiwu.com"><Button sx={{ fontFamily: 'body' }}>About Me</Button></a>
+            <h1>Hi, I'm Linkai</h1>
+            <p>I am a high school sophomore based in Maryland.</p>
+            <a href="/about"><Button sx={{ fontFamily: 'body' }}>About Me</Button></a>
           </Box>
           <Box className={styles.gridGraphic}>
-            <img width="300" src="https://i2-prod.dailyrecord.co.uk/incoming/article18989706.ece/ALTERNATES/s615/0_JS164998846.jpg"/>
+            <img width="300" src="https://static.wikia.nocookie.net/6bf30eb9-0ae6-4120-98c3-95b491227fc6"/>
           </Box>
         </Grid>
         <Grid gap={2} columns={[ 1, null, 4 ]} className={styles.row}>
           <Box className={styles.gridText}>
             <h1>Featured Projects</h1>
-            <p>Here are a few of my featured projects.</p>
+            <p>Here are a few of the things that I've been working on.</p>
             <a href="/projects"><Button sx={{ fontFamily: 'body' }}>Projects</Button></a>
           </Box>
-          <Box className={styles.gridGraphic}>
-            <img width="200" src="https://i1.sndcdn.com/artworks-000400124934-13zk66-t500x500.jpg"/>
+          <Box className={styles.project}>
+            <div className={styles.projectInner}>
+              <h2 style={{ margin: 0 }}>
+                me
+              </h2>
+              <p style={{ margin: 6 }}>My personal website. (this one!)</p>
+              <a href="https://github.com/linkai101/me" target="_blank" rel="noreferrer">
+                <FontAwesomeIcon icon={faGithub} size="lg"/>
+              </a>
+            </div>
           </Box>
-          <Box className={styles.gridGraphic}>
-            <img width="200" src="https://memesgifsandtrends.files.wordpress.com/2016/04/screen-shot-2016-02-01-at-6-01-10-am.png?w=640"/>
-          </Box>
-          <Box className={styles.gridGraphic}>
-            <img width="200" src="https://i.pinimg.com/originals/bc/45/b7/bc45b72c1266bdbbb08035536f8f9e4d.jpg"/>
+          <Box className={styles.project}>
+            <div className={styles.projectInner}>
+              <h2 style={{ margin: 0 }}>
+                <a href="https://classes.linkaiwu.com" target="_blank">Class Manager</a>
+              </h2>
+              <p style={{ margin: 6 }}>A virtual class management app</p>
+              <a href="https://github.com/linkai101/class-manager" target="_blank" rel="noreferrer">
+                <FontAwesomeIcon icon={faGithub} size="lg"/>
+              </a>
+            </div>
           </Box>
         </Grid>
         <Grid gap={2} columns={[ 1, null, 2 ]} className={styles.row}>
@@ -71,11 +80,11 @@ export default function Home() {
           </Box>
           <Box className={styles.gridText}>
             <h2>Latest Post</h2>
-            <p style={{border: "2px solid #eaeaea"}}>
-              <b>Example post</b><br/>
-              This is an example post<br/>
-              <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Read more</a>
-            </p>
+            <div className={styles.preview}>
+              <b>{latestPostData.title}</b><br/>
+              {latestPostData.excerpt}<br/>
+              <a href={"/blog/"+latestPostData.slug}>Read more</a>
+            </div>
           </Box>
         </Grid>
         <Grid gap={2} columns={[ 1, null, 2 ]} className={styles.row}>
@@ -86,15 +95,22 @@ export default function Home() {
           </Box>
           <Box className={styles.gridText}>
             <h2>Latest Signature</h2>
-            <p style={{border: "2px solid #eaeaea"}}>
-              <b>Iaknil Uw</b><br/>
-              lol hi u suck
-            </p>
+            <div className={styles.preview}>
+              <b>Not implemented yet!</b><br/>
+              The guestbook has not been implemented yet!
+            </div>
           </Box>
         </Grid>
       </Box>
-
-      <Footer/>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const latestPostData = getLatestPost();
+  return {
+    props: {
+      latestPostData,
+    },
+  };
 }

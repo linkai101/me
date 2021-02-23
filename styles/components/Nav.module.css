@@ -1,0 +1,25 @@
+.headerContainer {
+  padding: 24px;
+}
+
+.header {
+  text-align: center;
+}
+
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.nav {
+  font-size: 18px;
+}
+
+.nav a {
+  padding: 12px;
+}
+
+.active {
+  font-weight: bold;
+}

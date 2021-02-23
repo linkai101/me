@@ -1,0 +1,20 @@
+
+.main {
+}
+
+.row {
+  border-top: 1px solid #eaeaea;
+}
+
+.gridText {
+  padding: 24px;
+  padding-left: 42px;
+  padding-right: 42px;
+}
+
+.gridGraphic {
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

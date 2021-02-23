@@ -17,7 +17,7 @@ export default function Custom404() {
       
       <Box color='white' bg='secondary' className={styles.container}>
         <main className={styles.main}>
-          <span style={{marginRight:8}}><strong>{router.asPath}</strong> was not found.</span>
+          <span style={{ marginRight:8 }}><strong>{router.asPath}</strong> was not found.</span>
           <Link href="/" style={{ color: 'inherit' }}>Go home</Link>
         </main>
       </Box>
