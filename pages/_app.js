@@ -17,6 +17,10 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Linkai Wu</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          content="The personal website of Linkai Wu."
+        />
       </Head>
       
       <ThemeProvider theme={theme}>
