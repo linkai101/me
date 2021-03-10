@@ -1,30 +1,25 @@
 # linkaiwu.com
+My personal website built with [Next.js](https://nextjs.org).
 
-My personal website. [linkaiwu.com](https://linkaiwu.com) (under construction!)
+Live site: [linkaiwu.com](https://linkaiwu.com)
 
-## Available Scripts
+## 🚨 Forking this repo
+If you wanna fork this repo, feel free to do so, but please give me proper credit by linking back to [linkaiwu.com](https://linkaiwu.com).
 
-In the project directory, you can run:
+## 🛠️ Installation & Set Up
+1. Install dependencies
+```bash
+npm install
+```
+2. Start the development server
+```bash
+npm run dev
+```
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Deploy
+To deploy a static site:
+1. Go to `package.json` and change the build script to `next build && next export`
+2. Run the build script
+```bash
+npm run build
+```

@@ -1,0 +1,19 @@
+
+.title {
+  padding: 2rem;
+  text-align: center;
+}
+
+.title h1 {
+  font-size: 38px;
+}
+
+.main {
+}
+
+.post {
+  border-top: 1px solid #eaeaea;
+  padding: 2rem;
+  padding-right: 8%;
+  padding-left: 8%;
+}

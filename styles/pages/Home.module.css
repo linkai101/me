@@ -1,0 +1,87 @@
+.headerContainer {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  text-align: center;
+}
+
+.main {
+}
+
+/* HEADER */
+.title {
+  font-size: 10vw;
+  font-weight: bold;
+}
+
+.nav {
+  font-size: 24px;
+}
+
+.nav a {
+  padding: 12px;
+}
+
+.links {
+  padding: 14px;
+  font-size: 50px;
+}
+
+.links a {
+  padding: 8px;
+}
+
+/* MAIN */
+.row {
+  border-top: 1px solid #eaeaea;
+}
+
+.gridText {
+  padding: 24px;
+  padding-left: 42px;
+  padding-right: 42px;
+}
+
+.gridGraphic {
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project {
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projectInner {
+  border: 2px solid #eaeaea;
+  border-radius: 12px;
+  padding: 1em;
+  text-align: center;
+}
+
+.preview {
+  padding: 12px;
+  border: 2px solid #eaeaea
+}
+
+
+/* RESPONSIVE */
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 60px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .title {
+    font-size: 100px;
+  }
+}

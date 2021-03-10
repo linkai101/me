@@ -1,0 +1,18 @@
+.footer {
+  padding: 24px;
+  border-top: 1px solid #e2e2e2;
+  text-align: center;
+}
+
+.links {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.links section {
+  padding: 4px;
+}
+
+.links a {
+  padding: 8px;
+}
