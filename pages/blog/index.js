@@ -2,7 +2,7 @@ import React from 'react';
 import Link from "next/link";
 import { Box, Heading, Text } from 'theme-ui';
 import { getSortedPosts } from "../../lib/posts";
-import styles from '../../styles/Blog.module.css';
+import styles from '../../styles/pages/Blog.module.css';
 
 export default function Blog({ allPostsData }) {
   return (

@@ -1,11 +1,13 @@
 import React from 'react';
 import { Box, Grid, Button } from 'theme-ui';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/pages/Home.module.css';
 import { getLatestPost } from "../lib/posts";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
+
+const projects = require('../data/projects.json');
 
 export default function Home({ latestPostData }) {
   return (
@@ -49,28 +51,22 @@ export default function Home({ latestPostData }) {
             <p>Here are a few of the things that I've been working on.</p>
             <a href="/projects"><Button sx={{ fontFamily: 'body' }}>Projects</Button></a>
           </Box>
-          <Box className={styles.project}>
-            <div className={styles.projectInner}>
-              <h2 style={{ margin: 0 }}>
-                me
-              </h2>
-              <p style={{ margin: 6 }}>My personal website. (this one!)</p>
-              <a href="https://github.com/linkai101/me" target="_blank" rel="noreferrer">
-                <FontAwesomeIcon icon={faGithub} size="lg"/>
-              </a>
-            </div>
-          </Box>
-          <Box className={styles.project}>
-            <div className={styles.projectInner}>
-              <h2 style={{ margin: 0 }}>
-                <a href="https://classes.linkaiwu.com" target="_blank">Class Manager</a>
-              </h2>
-              <p style={{ margin: 6 }}>A virtual class management app</p>
-              <a href="https://github.com/linkai101/class-manager" target="_blank" rel="noreferrer">
-                <FontAwesomeIcon icon={faGithub} size="lg"/>
-              </a>
-            </div>
-          </Box>
+          { projects.featured.map(project => 
+            <Box className={styles.project} key={project.name}>
+              <div className={styles.projectInner}>
+                <h2 style={{ margin: 0 }}>
+                  {project.url ? 
+                    <a href={project.url} target="_blank">{project.name}</a> 
+                    : project.name
+                  }
+                </h2>
+                <p style={{ margin: 6 }}>{project.description}</p>
+                <a href={project.githubUrl} target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={faGithub} size="lg"/>
+                </a>
+              </div>
+            </Box>
+          )}
         </Grid>
         <Grid gap={2} columns={[ 1, null, 2 ]} className={styles.row}>
           <Box className={styles.gridText}>
@@ -96,7 +92,7 @@ export default function Home({ latestPostData }) {
           <Box className={styles.gridText}>
             <h2>Latest Signature</h2>
             <div className={styles.preview}>
-              <b>Not implemented yet!</b><br/>
+              <b>Not implemented yet</b><br/>
               The guestbook has not been implemented yet!
             </div>
           </Box>

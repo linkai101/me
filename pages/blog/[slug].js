@@ -6,6 +6,8 @@ import { Box, Text } from "theme-ui";
 import { getAllPostSlugs, getPostData } from "../../lib/posts";
 import components from "../../components/blog/AllComponents";
 
+// TODO: fix mobile big margin
+
 export default function Posts({ source, frontMatter }) {
   const content = hydrate(source, { components });
   return (
@@ -27,7 +29,7 @@ export default function Posts({ source, frontMatter }) {
             <span>{frontMatter.date}</span>
           </Text>
         </Box>
-        <Box sx={{ my: "4rem", mx: "6rem" }}>
+        <Box sx={{ my: "4rem", mx: "10%" }}>
           <Box>{content}</Box>
         </Box>
       </Box>

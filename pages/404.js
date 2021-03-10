@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import styles from '../styles/404.module.css';
+import styles from '../styles/pages/404.module.css';
 
 import { Box } from 'theme-ui';
 

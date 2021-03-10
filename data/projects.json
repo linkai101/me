@@ -1,0 +1,40 @@
+{
+  "featured": [
+    {
+      "name": "me",
+      "description": "My personal website, coded from scratch!",
+      "githubUrl": "https://github.com/linkai101/me"
+    },
+    {
+      "name": "Class Manager",
+      "description": "A virtual class management app.",
+      "url": "https://classes.linkaiwu.com",
+      "githubUrl": "https://github.com/linkai101/class-manager"
+    },
+    {
+      "name": "Typing Test",
+      "description": "A speed typing practice site.",
+      "url": "https://typing.linkaiwu.com",
+      "githubUrl": "https://github.com/linkai101/typing-test"
+    }
+  ],
+  "all": [
+    {
+      "name": "me",
+      "description": "My personal website, coded from scratch!",
+      "githubUrl": "https://github.com/linkai101/me"
+    },
+    {
+      "name": "Class Manager",
+      "description": "A virtual class management app.",
+      "url": "https://classes.linkaiwu.com",
+      "githubUrl": "https://github.com/linkai101/class-manager"
+    },
+    {
+      "name": "Typing Test",
+      "description": "A speed typing practice site.",
+      "url": "https://typing.linkaiwu.com",
+      "githubUrl": "https://github.com/linkai101/typing-test"
+    }
+  ]
+}

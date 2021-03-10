@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Grid } from 'theme-ui';
-import styles from '../styles/About.module.css';
+import styles from '../styles/pages/About.module.css';
 
 export default function About() {
   return (
