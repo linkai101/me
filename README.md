@@ -1,7 +1,9 @@
-# linkaiwu.com
-My personal website built with [Next.js](https://nextjs.org).
+# v1
+The first iteration of my personal website built with [Next.js](https://nextjs.org).
 
-Live site: [linkaiwu.com](https://linkaiwu.com)
+Live site: [v1.linkaiwu.com](https://v1.linkaiwu.com)
+
+Check out my current site: [linkaiwu.com](https://linkaiwu.com)
 
 ## 🚨 Forking this repo
 If you wanna fork this repo, feel free to do so, but please give me proper credit by linking back to [linkaiwu.com](https://linkaiwu.com).
